@@ -14,9 +14,9 @@ from cloudshell.shell.core.driver_utils import GlobalLock
 import cloudshell.networking.ericsson.ipos.ericsson_ipos_configuration as driver_config
 
 
-class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriverInterface, GlobalLock):
+class EricssonIPOSExtendedResourceDriver(ResourceDriverInterface, NetworkingResourceDriverInterface, GlobalLock):
     def __init__(self):
-        super(EricssonIPOSResourceDriver, self).__init__()
+        super(EricssonIPOSExtendedResourceDriver, self).__init__()
         bootstrap = DriverBootstrap()
         bootstrap.add_config(driver_config)
         bootstrap.initialize()
