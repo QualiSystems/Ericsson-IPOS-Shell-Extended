@@ -3,20 +3,19 @@ from cloudshell.networking.ericsson.ericsson_connectivity_operations import Eric
 from cloudshell.networking.ericsson.ericsson_firmware_operations import EricssonFirmwareOperations
 from cloudshell.networking.ericsson.ericsson_run_command_operations import EricssonRunCommandOperations
 from cloudshell.networking.ericsson.ericsson_state_operations import EricssonStateOperations
-from cloudshell.networking.ericsson.ipos.autoload.ericsson_ipos_snmp_autoload import EricssonIPOSSNMPAutoload
-
+from cloudshell.networking.ericsson.extended.ipos.autoload.ericsson_extended_ipos_snmp_autoload import EricssonExtendedIPOSSNMPAutoload
 from cloudshell.networking.networking_resource_driver_interface import NetworkingResourceDriverInterface
 from cloudshell.shell.core.context_utils import context_from_args
 from cloudshell.shell.core.driver_bootstrap import DriverBootstrap
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 from cloudshell.shell.core.driver_utils import GlobalLock
 
-import cloudshell.networking.ericsson.ipos.ericsson_ipos_configuration as driver_config
+import cloudshell.networking.ericsson.extended.ipos.ericsson_extended_ipos_configuration as driver_config
 
 
-class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriverInterface, GlobalLock):
+class EricssonIPOSExtendedResourceDriver(ResourceDriverInterface, NetworkingResourceDriverInterface, GlobalLock):
     def __init__(self):
-        super(EricssonIPOSResourceDriver, self).__init__()
+        super(EricssonIPOSExtendedResourceDriver, self).__init__()
         bootstrap = DriverBootstrap()
         bootstrap.add_config(driver_config)
         bootstrap.initialize()
@@ -98,7 +97,7 @@ class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriv
         :rtype: string
         """
 
-        autoload_operations = EricssonIPOSSNMPAutoload()
+        autoload_operations = EricssonExtendedIPOSSNMPAutoload()
         autoload_operations.logger.info('Autoload started')
         response = autoload_operations.discover()
         autoload_operations.logger.info('Autoload completed')
@@ -120,7 +119,7 @@ class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriv
         firmware_operations.logger.info(response)
 
     @context_from_args
-    def send_custom_command(self, context, custom_command):
+    def run_custom_command(self, context, custom_command):
         """Send custom command
 
         :return: result
@@ -128,8 +127,29 @@ class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriv
         """
 
         send_command_operations = EricssonRunCommandOperations()
-        response = send_command_operations.send_command(command=custom_command)
+        response = send_command_operations.run_custom_command(command=custom_command)
         return response
+
+    @context_from_args
+    def health_check(self, context):
+        """Performs device health check
+
+        """
+
+        state_operations = EricssonStateOperations()
+        return state_operations.health_check()
+
+    @context_from_args
+    def run_custom_config_command(self, context, custom_command):
+        """Send custom command in configuration mode
+
+        :return: result
+        :rtype: string
+        """
+
+        send_command_operations = EricssonRunCommandOperations()
+        result_str = send_command_operations.run_custom_config_command(command=custom_command)
+        return result_str
 
     @GlobalLock.lock
     @context_from_args
@@ -147,13 +167,16 @@ class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriv
         firmware_operations.logger.info(response)
 
     @context_from_args
-    def health_check(self, context):
-        """Performs device health check
+    def send_custom_command(self, context, custom_command):
+        """Send custom command in configuration mode
 
+        :return: result
+        :rtype: string
         """
 
-        state_operations = EricssonStateOperations()
-        return state_operations.health_check()
+        send_command_operations = EricssonRunCommandOperations()
+        response = send_command_operations.run_custom_command(command=custom_command)
+        return response
 
     @context_from_args
     def send_custom_config_command(self, context, custom_command):
@@ -162,8 +185,9 @@ class EricssonIPOSResourceDriver(ResourceDriverInterface, NetworkingResourceDriv
         :return: result
         :rtype: string
         """
+
         send_command_operations = EricssonRunCommandOperations()
-        result_str = send_command_operations.send_config_command(command=custom_command)
+        result_str = send_command_operations.run_custom_config_command(command=custom_command)
         return result_str
 
     @context_from_args

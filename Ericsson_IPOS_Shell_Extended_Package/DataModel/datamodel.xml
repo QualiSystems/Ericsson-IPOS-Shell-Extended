@@ -85,6 +85,12 @@
                 <Rule Name="Available For Abstract Resources"/>
             </Rules>
         </AttributeInfo>
+        <AttributeInfo Name="Ericsson Model" Description="The Ericsson device model." Type="String" DefaultValue="" IsReadOnly="true">
+            <Rules Override="false">
+                <Rule Name="Setting"/>
+                <Rule Name="Available For Abstract Resources"/>
+            </Rules>
+        </AttributeInfo>
         <AttributeInfo Name="SNMP Read Community" Description="The SNMP Read-Only Community String is like a password. It is sent along with each SNMP Get-Request and allows (or denies) access to device." Type="String" DefaultValue="" IsReadOnly="false">
             <Rules>
                 <Rule Name="Configuration"/>

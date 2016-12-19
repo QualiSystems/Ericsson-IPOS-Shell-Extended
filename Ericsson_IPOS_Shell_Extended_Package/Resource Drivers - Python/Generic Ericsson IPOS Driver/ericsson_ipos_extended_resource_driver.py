@@ -3,15 +3,14 @@ from cloudshell.networking.ericsson.ericsson_connectivity_operations import Eric
 from cloudshell.networking.ericsson.ericsson_firmware_operations import EricssonFirmwareOperations
 from cloudshell.networking.ericsson.ericsson_run_command_operations import EricssonRunCommandOperations
 from cloudshell.networking.ericsson.ericsson_state_operations import EricssonStateOperations
-from cloudshell.networking.ericsson.ipos.autoload.ericsson_ipos_snmp_autoload import EricssonIPOSSNMPAutoload
-
+from cloudshell.networking.ericsson.extended.ipos.autoload.ericsson_extended_ipos_snmp_autoload import EricssonExtendedIPOSSNMPAutoload
 from cloudshell.networking.networking_resource_driver_interface import NetworkingResourceDriverInterface
 from cloudshell.shell.core.context_utils import context_from_args
 from cloudshell.shell.core.driver_bootstrap import DriverBootstrap
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
 from cloudshell.shell.core.driver_utils import GlobalLock
 
-import cloudshell.networking.ericsson.ipos.ericsson_ipos_configuration as driver_config
+import cloudshell.networking.ericsson.extended.ipos.ericsson_extended_ipos_configuration as driver_config
 
 
 class EricssonIPOSExtendedResourceDriver(ResourceDriverInterface, NetworkingResourceDriverInterface, GlobalLock):
@@ -98,7 +97,7 @@ class EricssonIPOSExtendedResourceDriver(ResourceDriverInterface, NetworkingReso
         :rtype: string
         """
 
-        autoload_operations = EricssonIPOSSNMPAutoload()
+        autoload_operations = EricssonExtendedIPOSSNMPAutoload()
         autoload_operations.logger.info('Autoload started')
         response = autoload_operations.discover()
         autoload_operations.logger.info('Autoload completed')
