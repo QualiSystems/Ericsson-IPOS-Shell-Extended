@@ -8,3 +8,4 @@ cloudshell/networking/ericsson/ipos/autoload/test.py
 cloudshell_networking_ericsson_ipos_extended.egg-info
 Ericsson_IPOS_Shell_Extended_Package.zip
 cloudshell/tests/networking/ericsson/autoload/tests_ericsson_ext_ipos_autoload_unit_tests.py
+cloudshell/networking/ericsson/extended/ipos/run_ipos.py
