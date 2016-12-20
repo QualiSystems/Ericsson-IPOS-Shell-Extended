@@ -116,7 +116,7 @@
                 <Rule Name="Configuration"/>
             </Rules>
         </AttributeInfo>
-        <AttributeInfo Name="Enable SNMP" Description="If set to True and SNMP isn’t enabled yet in the device the Shell will automatically enable SNMP in the device when Autoload command is called. SNMP must be enabled on the device for the Autoload command to run successfully. True by default." Type="Boolean" DefaultValue="True" IsReadOnly="false">
+        <AttributeInfo Name="Enable SNMP" Description="If set to True and SNMP isn't enabled yet in the device the Shell will automatically enable SNMP in the device when Autoload command is called. SNMP must be enabled on the device for the Autoload command to run successfully. True by default." Type="Boolean" DefaultValue="True" IsReadOnly="false">
             <Rules>
                 <Rule Name="Configuration"/>
             </Rules>
@@ -275,7 +275,7 @@
                 <Rule Name="Available For Abstract Resources"/>
             </Rules>
         </AttributeInfo>
-        <AttributeInfo Name="Associated Ports" Description="Ports associated with this port channel. The value is in the format &quot;[portResourceName],…&quot;, for example &quot;GE0-0-0-1,GE0-0-0-2&quot;" Type="String" DefaultValue=""
+        <AttributeInfo Name="Associated Ports" Description="Ports associated with this port channel. The value is in the format &quot;[portResourceName],...&quot;, for example &quot;GE0-0-0-1,GE0-0-0-2&quot;" Type="String" DefaultValue=""
                        IsReadOnly="true">
             <Rules Override="false">
                 <Rule Name="Setting"/>
