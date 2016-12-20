@@ -476,6 +476,7 @@
                                 <AllowedValue>1-10ge-20-port</AllowedValue>
                                 <AllowedValue>10-100ge-2-2-port</AllowedValue>
                                 <AllowedValue>1-10ge-40-port</AllowedValue>
+                                <AllowedValue>1-100ge-24-2-port</AllowedValue>
                                 <AllowedValue>ssc1</AllowedValue>
                                 <AllowedValue>ssc1-v2</AllowedValue>
                                 <AllowedValue>ssc2-a</AllowedValue>
@@ -485,28 +486,10 @@
                                 <AllowedValue>alsw</AllowedValue>
                                 <AllowedValue>alswt</AllowedValue>
                                 <AllowedValue>alsw2</AllowedValue>
+                                <AllowedValue>rp</AllowedValue>
                                 <AllowedValue>rpsw</AllowedValue>
                                 <AllowedValue>rpsw-v2</AllowedValue>
                                 <AllowedValue>rpsw2</AllowedValue>
-                                <AllowedValue>atm-oc3e-8-port</AllowedValue>
-                                <AllowedValue>atm-oc12e-2-port</AllowedValue>
-                                <AllowedValue>oc3e-8-port</AllowedValue>
-                                <AllowedValue>oc12e-4-port</AllowedValue>
-                                <AllowedValue>oc48e-4-port</AllowedValue>
-                                <AllowedValue>oc192-1-port</AllowedValue>
-                                <AllowedValue>ch-oc3oc12-8or2-port</AllowedValue>
-                                <AllowedValue>fege-60-2-port</AllowedValue>
-                                <AllowedValue>ge-10-port</AllowedValue>
-                                <AllowedValue>ge-20-port</AllowedValue>
-                                <AllowedValue>ge3-4-port</AllowedValue>
-                                <AllowedValue>ge-5-port</AllowedValue>
-                                <AllowedValue>ge2-10-port</AllowedValue>
-                                <AllowedValue>ge4-20-port</AllowedValue>
-                                <AllowedValue>10ge-1-port</AllowedValue>
-                                <AllowedValue>10ge-4-port</AllowedValue>
-                                <AllowedValue>10ge-oc192-1-port</AllowedValue>
-                                <AllowedValue>ase</AllowedValue>
-                                <AllowedValue>sse</AllowedValue>
                             </AllowedValues>
                         </AttachedAttribute>
                     </AttachedAttributes>
