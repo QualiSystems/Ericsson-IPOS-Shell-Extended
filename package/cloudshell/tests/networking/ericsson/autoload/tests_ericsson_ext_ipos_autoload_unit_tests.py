@@ -7,7 +7,7 @@ from mock import MagicMock
 from cloudshell.core.logger.qs_logger import get_qs_logger
 
 
-class TestEricssonAutoload(TestCase):
+class TestEricssonIPOSAutoload(TestCase):
     def _check_relative_path(self, resources):
         relative_path = []
         for resource in resources:
