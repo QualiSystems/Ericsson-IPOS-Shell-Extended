@@ -58,7 +58,7 @@
     }
   },
   "1.3.6.1.4.1.193.218.6.9.209" : {
-    "linecard_model" : "1-10ge-20port",
+    "linecard_model" : "1-10ge-20-port",
     "pfe_0" : {
       "1GE_ports" : [
         "1-10"
