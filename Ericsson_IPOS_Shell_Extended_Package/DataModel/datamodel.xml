@@ -506,6 +506,7 @@
                                 <AllowedValue>10ge-4-port</AllowedValue>
                                 <AllowedValue>10ge-oc192-1-port</AllowedValue>
                                 <AllowedValue>ase</AllowedValue>
+                                <AllowedValue>Ase2</AllowedValue>
                                 <AllowedValue>sse</AllowedValue>
                             </AllowedValues>
                         </AttachedAttribute>
