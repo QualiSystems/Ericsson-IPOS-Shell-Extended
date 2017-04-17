@@ -338,7 +338,7 @@
                                 <AllowedValue>10ge-10-port</AllowedValue>
                                 <AllowedValue>1-10ge-20-4-port</AllowedValue>
                                 <AllowedValue>40-100ge-2-port</AllowedValue>
-                                <AllowedValue>1-10ge-20-port</AllowedValue>
+                                <AllowedValue>1-10ge-20port</AllowedValue>
                                 <AllowedValue>10-100ge-2-2-port</AllowedValue>
                                 <AllowedValue>1-10ge-40-port</AllowedValue>
                                 <AllowedValue>1-100ge-24-2-port</AllowedValue>
